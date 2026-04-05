@@ -20,7 +20,7 @@ namespace usuarios.usuarios.application
                 CreatedAt = DateTime.Now,
                 UpdatedAt = DateTime.Now
             };
-            usuarioRepository.Create(newUser);
+            await usuarioRepository.Create(newUser);
             return newUser;
         }
     }

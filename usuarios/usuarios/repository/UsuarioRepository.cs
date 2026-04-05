@@ -12,7 +12,7 @@ namespace usuarios.usuarios.repository
                 _context = context;
             }
     
-            public async void Create(User usuario)
+            public async Task Create(User usuario)
             {
                
     

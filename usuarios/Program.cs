@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using usuarios.Models;
+using usuarios.usuarios.application;
+using usuarios.usuarios.repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +19,8 @@ builder.Services.AddDbContext<CitytestContext>(options =>
         ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
     ));
 
+builder.Services.AddScoped<UsuarioRepository>();
+builder.Services.AddScoped<UsuariosUseCase>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -7,14 +7,15 @@ namespace usuarios.usuarios.infrastructure
 {
     [ApiController]
     [Route("[controller]")]
-    public class UserCtrl : ControllerBase
+    public class UserController : ControllerBase
     {
         private readonly UsuariosUseCase _usuariosUseCase;
-        public UserCtrl(UsuariosUseCase usuariosUseCase)
+        public UserController(UsuariosUseCase usuariosUseCase)
         {
             this._usuariosUseCase = usuariosUseCase;
         }
 
+        [HttpPost(Name = "users")]
         public async Task<IActionResult> UserCreate(UserCreate user)
         {
             try 
